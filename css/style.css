@@ -1,0 +1,20 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    opacity: 0.9;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+#loading {
+    background: #000 url(/images/loading-gif.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
