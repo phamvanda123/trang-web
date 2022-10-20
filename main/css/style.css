@@ -1,0 +1,145 @@
+body {
+    overflow: hidden;
+    background-color: #477879;
+}
+
+.box {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+}
+
+.box::before {
+    position: absolute;
+    background-color: #e69c9f;
+    width: 100px;
+    height: 100px;
+    content: '';
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%);
+}
+
+.box::after {
+    position: absolute;
+    width: 100px;
+    background-color: #000;
+    content: '';
+    height: 10px;
+    bottom: -30px;
+    opacity: 0.4;
+    filter: blur(10px);
+}
+
+.content {
+    position: absolute;
+    background-color: #F2EEE4;
+    width: 80%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -10px);
+    height: 80px;
+    transition: 0.5s;
+}
+
+.mydesign {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #d26f72;
+    display: block;
+    clip-path: polygon(0 0, 50% 35%, 100% 0, 100% 100%, 0 100%);
+}
+
+.mydesign::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background-color: #bd5559;
+    content: '';
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.box:hover .content {
+    transform: translate(-50%, -30px);
+}
+
+input:checked~.content {
+    bottom: 150px;
+    width: 250px;
+    height: 400px;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.content .tittle {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: large;
+    display: none;
+}
+
+.content .des {
+    display: none;
+    padding: 0 5px;
+}
+
+.content label {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.content img {
+    display: none;
+}
+
+input:checked~.content img,
+input:checked~.content .tittle,
+input:checked~.content .des,
+input:checked~.content label {
+    opacity: 0;
+    display: block;
+    animation: showcontent 1s ease-in-out 0.5 forwards;
+}
+
+@keyframes showcontent {
+    from {
+        opacity: 0;
+        transform: translate(0, 50px);
+    }
+    to {
+        opacity: 2;
+        transform: translate(0, 0);
+    }
+}
+
+.gif {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    display: none;
+}
+
+.myClass {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 15%;
+    display: none;
+}
+
+h1 {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    display: none;
+}
